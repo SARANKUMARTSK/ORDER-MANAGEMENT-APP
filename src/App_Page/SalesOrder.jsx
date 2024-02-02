@@ -9,11 +9,14 @@ import { useNavigate } from 'react-router-dom';
 
 function SalesOrder() {
     let navigate = useNavigate()
+    let createOrder=()=>{
+      navigate('/add-sales-order')
+    }
   return <>
   <div className='order'>
         <div className='SO_PO-heading'>
         <h6>Sales Orders</h6>
-        <button onClick={()=>navigate('add-sales-order')}><FontAwesomeIcon icon={faSquarePlus} />&nbsp;Create Order</button>
+        <button onClick={()=>createOrder}><FontAwesomeIcon icon={faSquarePlus} />&nbsp;Create Order</button>
         </div>
     <div className='order-main-content'>
         <div className='bars'>
