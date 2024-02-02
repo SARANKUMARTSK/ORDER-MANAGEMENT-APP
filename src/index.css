@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Concert+One&family=Dancing+Script:wght@400..700&family=Single+Day&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+.topbar{
+  min-height: 100px;
+  /* box-shadow: 1px 1px 5px lightgray; */
+  background-color: white; 
+  position: sticky !important;
+  top: 0;
+  z-index: 1;
+  
+}
+.orderIcon{
+  font-family: "Concert One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-style: 50px;
+  text-transform: 1px 1px 1px grey;
+}
+.orderIcon>h4>span{
+  color: orangered;
+  font-size: 30px;
+}
+.orderIcon>h4{
+  display: inline;
+}
+.icon{
+  font-size: 35px;
+  color: black;  
+}
+.nav_heads>a{
+  color: black;
+  font-size: 18px;
+  font-family: "Concert One", sans-serif;
+  text-shadow: 0px 0px 2px grey  ;
+  margin-left: 40px;
+}
+.nav_heads>a:hover{
+  color: orangered !important;
+  text-shadow: 1px 1px 1px black  ;
+  transform: scale(1.2);
+  transition: ease-in-out 200ms;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.about_image{
+  flex: 0.5;
+}
+.about_heading{
+  flex: 0.5;
+  margin-top: 1rem;
+}
+.about_heading>div>h1{
+ color: chocolate;
+  font-family: "Cute Font", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 70px;
+  padding-left: 80px;
+  padding-top: 60px;
+}
+.about_heading>div>p{
+  font-size: 20px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.about_heading>div>img{
+  align-items: center;
+  height: 370px;
+  margin-left: 180px;
+}
+.float_image{
+  float: left;
+  height: 380px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.float_image_right{
+  float: right;
+  height: 380px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.services_page>h3{
+  font-family: "Concert One", sans-serif;
+  color: rgb(61, 79, 96);
+  text-shadow: 1px 1px 2px black;
+  padding: 25px;
+}
+.services_container>p{
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Alegreya", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: gray;
+}
+.services_container>p>span{
+  font-weight: 500;
+  text-shadow: 1px 1px 1px black;
+}
+.testimonial_page>h3{
+  color: chocolate;
+  font-family: "Cute Font", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 70px;
+  padding-left: 80px;
+  padding-top: 60px;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+}
+.testimonial_container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.testimonials{
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px grey;
+  border-radius: 10px;
+  width: 350px;
+  position: relative;
+  margin-top: 50px;
+}
+.testimonial_stars{
+  color: goldenrod;
+  padding: 30px;
+}
+.testimonial_content{
+  text-align: center;
+}
+.testimonial_content>p{
+  text-indent: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.testimonial_content>img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.testimonial_content>div>h6{
+  display: inline;
+}
+.testimonial_content>div>p{
+text-decoration: underline;
+}
+.footer_page{
+  margin-top: 20px;
+  min-height: 300px;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  column-gap: 30px;
+  grid-template-columns: 30% 30% 30%;
+  flex-wrap: wrap;
+}
+.footer_copyRights{
+  height: 80px;
+  background-color: black;
+  border-top: 2px solid bisque;
+}
+.copy{
+     color: beige ;
+     text-align: center;
+     margin-top: 20px;
+     text-shadow: 1px 1px 3px beige;
+}
+.orderIcon_footer{
+  color: white;
+  display: inline;
+  font-family: "Concert One", sans-serif;
+  padding: 50px;
+}
+.orderIcon_footer>h4>span{
+  color: orangered;
+  display: inline !important;
+  font-size: 30px;
+}
+.icon_footer{
+  color: white;
+  font-size: 40px;
+}
+.footer_adress{
+  font-family: "Concert One", sans-serif;
+  color: white;
+  padding: 20px;
+  font-weight: 500;
+}
+.footer_about{
+  text-align: center;
+}
+.footer_about2{
+  color: aliceblue;
+  font-family: "Concert One", sans-serif;
+  list-style: none;
+  text-align: center;
+}
+.footer_about2>ul{
+  list-style: none;
+  padding-left: 0;
+}
+.footer_about2>ul>li:hover{
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
+}
+.footer_about2>h3{
+  text-decoration: underline;
+  color: orangered;
+}
+.footer_about3{
+  text-align: center;
+  font-family: "Concert One", sans-serif;
+}
+.footer_about3>h3{
+  text-decoration: underline;
+  color: orangered;
+}
+.footer_flex_icons{
+  font-size: 30px;
+  color: white ;
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer_about3>h6{
+  text-decoration: underline;
+  color: white;
+  padding: 10px;
+}
+.footer_flex_icons>a:hover{
+  color: greenyellow;
+}
+.login_container{
+  display: flex;
+  margin-top: 90px;
+}
+.login_image{
+  flex: 0.6;
+}
+.login_forms{
+  flex: 0.4;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.login_forms>h3{
+  font-family: "Concert One", sans-serif;
+  padding: 10px;
+  margin-left: 100px;
+}
+.login_forms>input{
+  border-radius: 20px;
+  margin: 10px;
+  margin-left: 35px;
+  padding: 10px;
+  width: 80%;
+}
+.login_forms>button{
+  border-radius: 20px;
+  display: block;
+  padding: 10px;
+  width: 30%;
+  margin-left: 130px;
+  background-color: black;
+  font-weight: bolder;
+  color: orangered;
+  font-family: "Concert One", sans-serif;
+  letter-spacing: 1px;
+}
+.login_forms>button:hover{
+  transform: scale(1.1);
+  transition: ease-in-out 200ms ;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 2px 2px 2px grey;
+  background-color: lawngreen;
+  color: black;
+}
+.login_page{
+  display: flex;
+  justify-content: center;
+}
+.login_container{
+  margin-bottom: 70px;
+  border: 1px solid black;
+  width: 60%;
+  border-radius: 20px;
+  background-image: linear-gradient(gray ,beige);
+  box-shadow: 3px 3px 10px gray;
+}
+.login_icon{
+  font-size: 100px;
+  text-align: center;
+  margin-left: 130px;
+  color: bisque;
+}
+.login_image{
+  background-image: url("https://img.freepik.com/free-photo/medium-shot-man-checking-documents_23-2149214305.jpg");
+  background-position: center;
+  border-radius:  20px 0px 0px 20px;
+}
+.login_page{
+  background-color: antiquewhite;
+}
+.dashboard_brand_name>span{
+color: orangered;
+font-size: 30px;
+}
+.sidebar-brand-icon{
+  font-size: 35px;
+  color: white;
+}
+.dashboard_font{
+  font-family: "Concert One", sans-serif;
+  text-shadow: 1px 1px 1px black;
+}
+.sidebar{
+  height: 100%;
+  background-color: blue;
+}
+.logout{
+  color: darkgoldenrod !important;
+  font-size: 15px !important;
+}
+.nav-item:hover{
+  cursor: pointer;
+}
+.logout:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: ease-in-out 200ms ;
+  color: red !important;
+}
+.order{
+  /* border: 1px solid black; */
+  height: 100vh;
+}
+.order-main-content{
+  /* border: 1px solid black; */
+  height: auto;
+}
+.order-pagination-box{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-pagination-box>h6{
+  color: lightslategrey;
+  font-family: "Concert One", sans-serif;
+  font-size: 20px;
+}
+.order-table{
+  display: flex;
+  text-align: center;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  /* border: 2px solid black; */
+  border-radius: 15px;
+  padding: 10 px;
+  max-height: 80vh;
+  width: auto;
+}
+.selectTag{
+  border-radius: 5px;
+  padding: 5px;
+}
+.SO_PO-heading{
+display: flex;
+justify-content: space-between;
+font-family: "Concert One", sans-serif;
+}
+.SO_PO-heading>h6{
+  color: lightslategrey;
+  font-size: 30px;
+}
+.SO_PO-heading>button{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: orangered;
+  border-radius: 10px;
+  margin: 15px;
+  
+}
+.SO_PO-heading>button:hover{
+ text-shadow: 1px 1px 1px black;
+ transform: scale(1.05);
+ transition: ease-in-out 200ms ;
+ box-shadow: 1px 1px 5px black;
+}
+.bars{
+  margin: 10px;
+  display: flex;
+}
+.add-order-body{
+  /* border: 1px solid black; */
+  display: flex;
+  color: black;
+  font-family: "Cute Font", sans-serif;
+  font-size: 30px;
+}
+.add-order-header>h3{
+  color: lightslategray;
+  font-family: "Concert One", sans-serif;
+  text-align: center;
+  align-items: center;
+  text-shadow: 1px 1px 1px black;
+}
+.order-form>input{
+border-radius: 10px;
+min-width:280px ;
+border: none;
+border-bottom: 2px solid black;
+}
+textarea{
+  min-width: 100%;
+  border-radius: 15px;
+}
+.order-form{
+  margin: 15px;
+}
+.order-form>label{
+ color: black;
+ font-weight: 400;
+ /* opacity: 0.7; */
+}
+.order-form>label:hover{
+  opacity: 0.6;
+ }
+.button_container{
+  display: flex;
+  justify-content: center;
+ align-items: center;
+ align-content: center;
+}
+.button_container>button{
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-weight: 900;
+  background-color: chartreuse;
+  box-shadow: 1px 1px 5px black;
+ 
+}
+.order-page-icon{
+ font-size: large;
+ color: cadetblue;
+}
+
+
+
