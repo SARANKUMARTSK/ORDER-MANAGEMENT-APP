@@ -60,14 +60,14 @@ function Sidebar() {
 
             {/* Nav Item - Pages Collapse Menu*/}
             <li className="nav-item">
-                <a className="nav-link collapsed" >
+                <a className="nav-link collapsed" onClick={()=>navigate("supplier")} >
                 <FontAwesomeIcon icon={faPersonArrowDownToLine} />
                 &nbsp;&nbsp; <span>Supplier</span>
                 </a>
             </li>
             {/* Nav Item - Charts*/}
             <li className="nav-item">
-                <a className="nav-link" >
+                <a className="nav-link" onClick={()=>navigate("customer ")}>
                 <FontAwesomeIcon icon={faPersonArrowUpFromLine} />
                 &nbsp; &nbsp;<span>Customer</span></a>
             </li>
