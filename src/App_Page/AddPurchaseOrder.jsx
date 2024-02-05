@@ -1,17 +1,31 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faBuilding ,faEnvelope,faPhone,faMobileRetro,faMapLocationDot,faBook,faNoteSticky,faCommentsDollar} from '@fortawesome/free-solid-svg-icons'
 
 function AddPurchaseOrder() {
-    let customerId="PO-12356"
+  let [name,setName] = useState("");
+  let [Company,setCompany] = useState("");
+  let [email,setEmail] = useState("");
+  let[phoneNumber,setPhoneNumber] = useState("");
+  let[addPhoneNumber,setAddPhoneNumber] = useState("");
+  let[doorNo,setDoorNo] = useState("");
+  let[address , setAddress] = useState("");
+  let[pinCode , setPinCode] = useState("");
+  let[productName,setProductName] = useState("");
+  let[productQty,setProductQty] = useState("");
+  let[productPrice,setProductPrice] = useState("");
+  let[orderDate,setOrderdate]= useState("");
+  let[deliveryDate , setDeliveryDate] = useState("");
+  let[productDescription,setProductDescription] = useState("");
+  let[payment,setPayment] = useState("");
+
+
   return <>
   <Link to='add-purchase-order' style={{textDecoration:"none"}}>
     <div className='add-order' >
-
-    
             <div className='add-order-header'>
-               <h3>Add Purchase Order</h3>
+               <h3> Purchase Order</h3>
             </div>
 
         <div className='add-order-body'>

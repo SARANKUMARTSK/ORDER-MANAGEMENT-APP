@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 function Sidebar() {
     const navigate = useNavigate();
   return <>
-  <div className='sidebar' >
+  {/* <div className='sidebar ' > */}
   <ul  className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"  id="accordionSidebar">
             {/*Sidebar - Brand*/}
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -81,7 +81,7 @@ function Sidebar() {
                 LOG-OUT
                 </div>
         </ul>
-  </div>
+  {/* </div> */}
   </>
 }
 

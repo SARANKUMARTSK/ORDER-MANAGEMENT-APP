@@ -16,7 +16,7 @@ function Topbar() {
   
   <Navbar collapseOnSelect expand="lg" className=" topbar">
      <Container>
-        <Navbar.Brand className='orderIcon'><FontAwesomeIcon className='icon' icon={faPhoenixFramework} /><h4><span>O</span>rder<span>H</span>ub</h4></Navbar.Brand>
+        <Navbar.Brand onClick={()=>navigate('/about')}  className='orderIcon'><FontAwesomeIcon className='icon' icon={faPhoenixFramework} /><h4 ><span>O</span>rder<span>H</span>ub</h4></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"> </Nav>

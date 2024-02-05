@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useParams} from 'react'
 import Pagination from 'react-bootstrap/Pagination';
 import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,39 +7,61 @@ import { faTrashCan} from '@fortawesome/free-regular-svg-icons';
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
 import { API_URL } from '../App';
 
+
 function SalesOrder() {
+    
     let navigate = useNavigate()
     let [salesOrder,setSalesOrder] = useState([])
-    let createOrder=()=>{
-      navigate('add-sales-order')
-    }
 
     let getdata = async()=>{
-     try{
-      let res = await axios.get(API_URL)
-      // console.log(res.data);
-      setSalesOrder(res.data)
-     }catch(error){
-      console.log(error);
+      try{
+       let res = await axios.get(API_URL)
+       let data = res.data
+       setSalesOrder(data)
+      }catch(error){
+       console.log(error);
+      }
      }
+
+     
+    let createOrder=(e)=>{
+      navigate('/dashboard/add-sales-order');
     }
+
+    
+
     useEffect(()=>{
       getdata();
     },[])
 
-   let handleDelete=async(salesOrder)=>{
+   let handleDelete=async(order)=>{
     try{
-      let res = await axios.delete(`${API_URL}/${salesOrder.id}`);
+      let res = await axios.delete(`${API_URL}/${order.id}`);
       getdata();
     }catch(error){
       console.log(error);
     }
    
    }
-    
+  //  let handleView=async(user)=>{
+  //   console.log(user);
+  //   navigate(`/dashboard/edit-sales-order/${user.id}`);
+  //   try{
+  //     let res = await axios.get(`${API_URL}/${user.id}`)
+  //     getdata()   
+      
+  //   }catch(error){
+  //     console.log(error);
+  //   }
+  //  }
+ 
+  let handleEdit=async(user)=>{
+    navigate(`dashboard/edit-sales-order/${user.id}`)
+    let res =await axios.get(`${API_URL}/${user.id}`);
+    getdata()
+  }
     
 
   return <>
@@ -98,9 +120,9 @@ function SalesOrder() {
             <td>{e.name}</td>
             <td>{e.courier}</td>
             <td>{e.trackingCode}</td>
-            <td ><FontAwesomeIcon icon={faPenToSquare} /></td>
+            <td ><FontAwesomeIcon onClick={()=>handleEdit(e)} icon={faPenToSquare} /></td>
             <td><FontAwesomeIcon onClick={()=>handleDelete(e)} icon={faTrashCan} /></td>
-            <td><FontAwesomeIcon icon={faEye} /></td>
+            <td><FontAwesomeIcon onClick={()=>handleView(e)} icon={faEye} /></td>
           </tr>
         </tbody>
         })

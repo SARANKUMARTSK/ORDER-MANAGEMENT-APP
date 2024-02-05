@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faEnvelope,faPhone,faLocationDot,faBook,faTruck,faNoteSticky,faMobileRetro} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { API_URL } from '../App'
 
-function AddSalesOrder() {
+function EditSalesOrder() {
    let [name,setName] = useState("");
    let [email,setEmail] = useState("");
    let[phoneNumber,setPhoneNumber] = useState("");
@@ -22,22 +22,48 @@ function AddSalesOrder() {
    let[productDescription,setProductDescription] =useState("");
    let[status,setStatus] = useState("");
    let [courier,setCourier] = useState("");
-   let navigate = useNavigate();
-
-
-  let handleAdd=async()=>{
+   let {id} = useParams()
+    
+   useEffect(()=>{
+   let fetchUserDetails = async()=>{
   try{
-    let res = await axios.put(API_URL,{
-      name,email,phoneNumber,addPhoneNumber,doorNo,street,city,pinCode,productName,
-      productQty,productPrice,orderDate,deliveryDate,productDescription,status,courier});
-      navigate('/dashboard/sales-order')
+    let response = await axios.get(`${API_URL}/${id}`);
+    let data = response.data;
+    // console.log(response.data);
+    setName(data.name),
+    setEmail(data.email),
+    setPhoneNumber(data.phoneNumber),
+    setAddPhoneNumber(data.addPhoneNumber),
+    setDoorNo(data.doorNo),
+    setStreet(data.street),
+    setCity(data.city),
+    setPinCode(data.pinCode),
+    setProductName(data.productName),
+    setProductQty(data.productQty),
+    setProductPrice(data.productPrice),
+    setProductDescription(data.productDescription),
+    setOrderdate(data.orderDate),
+    setDeliveryDate(data.deliveryDate),
+    setStatus(data.status),
+    setCourier(data.courier)
   }catch(error){
-  console.log(error);
+    console.log(error);
   }
-  } 
-
-
-
+   }
+   fetchUserDetails();
+   },[id]);
+   
+  //  let handleUpdate=async()=>{
+  //   try{
+  //   let res = await axios.put(API_URL,name,email,phoneNumber,addPhoneNumber,doorNo,street,city,pinCode,
+  //     productName,productQty,productPrice,orderDate,deliveryDate,productDescription,status,courier)
+  //     navigate("/sales-order")
+  //   }catch(error){
+  //     console.log();
+  //   }
+  //  }
+   
+ 
   return <>
   <Link to='add-sales-order' style={{textDecoration:"none"}}>
     <div className='add-order' >
@@ -49,7 +75,7 @@ function AddSalesOrder() {
 
         <div className='add-order-body'>
           <div className='order-form'>
-            <label htmlFor="name"><FontAwesomeIcon  className='order-page-icon' icon={faUser} />&nbsp;Customer Name :</label>&nbsp;<input onChange={(e)=>{setName(e.target.value)}} value={name} type="text" placeholder='Full Name'/>
+            <label htmlFor="name"><FontAwesomeIcon  className='order-page-icon' icon={faUser} />&nbsp;Customer Name :</label>&nbsp;<input value={name} onChange={(e)=>{setName(e.target.value)}}  type="text" placeholder='Full Name'/>
             <br />
             
             <label htmlFor="phone">Customer Contact Details :</label>
@@ -60,17 +86,25 @@ function AddSalesOrder() {
             <br />
       
             <label ><FontAwesomeIcon className='order-page-icon' icon={faLocationDot} />&nbsp;Delivery Address : </label><br />
-            <input value={doorNo} onChange={(e)=>{setDoorNo(e.target.value)}} type="text" placeholder='Door No.'/>&nbsp;
+            DoorNo:
+            <input value={doorNo} onChange={(e)=>{setDoorNo(e.target.value)}} type="text" placeholder='Door No.'></input> &nbsp;
+            Street:
             <input value={street} onChange={(e)=>{setStreet(e.target.value)}} type="text"  placeholder='Street Name' />&nbsp;
-            <input value={city} onChange={(e)=>{setCity(e.target.value)}} type="text"  placeholder='City Name'/> &nbsp;
+            City:
+            <input value={city} onChange={(e)=>{setCity(e.target.value)}} type="text"  placeholder='City Name'/> &nbsp;<br />
+            <br />
+            PinCode:
             <input value={pinCode} onChange={(e)=>{setPinCode(e.target.value)}} type="text"  placeholder='Pin Code'/>
             <br />
             
 
             <label><FontAwesomeIcon className='order-page-icon' icon={faBook} />&nbsp;Order Details: </label>
             <br />
+            Product:
             <input value={productName} onChange={(e)=>{setProductName(e.target.value)}} type="text" placeholder=' Product Name' />&nbsp;
+            Qty : 
             <input value={productQty} onChange={(e)=>{setProductQty(e.target.value)}} type="text" placeholder=' Qty' />&nbsp;
+            Price :
             <input value={productPrice} onChange={(e)=>{setProductPrice(e.target.value)}} type="text" placeholder=' Price' />&nbsp;
             <br />
             <br />
@@ -100,7 +134,7 @@ function AddSalesOrder() {
           
         </div>
         <div className='button_container'>
-          <button onClick={()=>{handleAdd()}}>Submit</button>
+          <button onClick={()=>{handleUpdate(e)}}>Submit</button>
         </div>
    </div>
 
@@ -108,4 +142,4 @@ function AddSalesOrder() {
   </>
 }
 
-export default AddSalesOrder
+export default EditSalesOrder

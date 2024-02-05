@@ -17,12 +17,18 @@ function PurchaseOrder() {
    let getdata = async ()=>{
     try{
       let res = await axios.get(API_URL2)
+      let data = res.data;
       // console.log(res.data);
-      setOrder(res.data)
+      setOrder(data)
     }catch(error){
       console.log(error);
     }
    }
+   
+   let createOrder=()=>{
+    navigate('/dashboard/add-purchase-order')
+  }
+
    useEffect(()=>{
     getdata()
    },[])
@@ -37,14 +43,18 @@ function PurchaseOrder() {
    }
   }
 
-  let handleView=()=>{
-    navigate('add-purchase-order')
+  let handleEdit=async(user)=>{
+    navigate(`/dashboard/edit-purchase-order/${user.id}`)
+    let res = await axios.get(`${API_URL2}/${user.id}`)
+    getdata()
   }
+
+  
   return <>
     <div className='order'>
         <div className='SO_PO-heading'>
         <h6>Purchase Orders</h6>
-        <button><FontAwesomeIcon icon={faSquarePlus} />&nbsp;Create Order</button>
+        <button onClick={()=>createOrder()}><FontAwesomeIcon icon={faSquarePlus} />&nbsp;Create Order</button>
         </div>
     <div className='order-main-content'>
         <div className='bars'>
@@ -96,7 +106,7 @@ function PurchaseOrder() {
           <td>{e.name}</td>
           <td>{e.curier}</td>
           <td>{e.trackingCode}</td>
-          <td><FontAwesomeIcon  icon={faPenToSquare} /></td>
+          <td><FontAwesomeIcon onClick={()=>handleEdit(e)}  icon={faPenToSquare} /></td>
           <td><FontAwesomeIcon onClick={()=>handleDelete(e)} icon={faTrashCan} /></td>
           <td><FontAwesomeIcon onClick={()=>handleView(e)} icon={faEye} /></td>
         </tr>
